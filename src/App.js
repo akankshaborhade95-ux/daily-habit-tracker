@@ -4,44 +4,43 @@ import Progress from "./components/Progress";
 import "./App.css";
 
 function App() {
+  // 6 beginner-friendly daily habits (text-only)
   const [habits, setHabits] = useState([
-    { id: 1, name: "Drink Water", icon: "💧", done: false },
-    { id: 2, name: "Morning Walk", icon: "🚶‍♂️", done: false },
-    { id: 3, name: "Read a Book", icon: "📖", done: false },
-    { id: 4, name: "Meditation", icon: "🧘‍♀️", done: false },
-    { id: 5, name: "Write Journal", icon: "✍️", done: false },
-    { id: 6, name: "Stretching", icon: "🤸‍♂️", done: false }
+    { id: 1, name: "Morning Walk", done: false },
+    { id: 2, name: "Meditation", done: false },
+    { id: 3, name: "Cook a Healthy Meal", done: false },
+    { id: 4, name: "Read a Book", done: false },
+    { id: 5, name: "Plan Tomorrow", done: false },
+    { id: 6, name: "Drink Water", done: false },
   ]);
+
   const [newHabit, setNewHabit] = useState("");
-  // Toggle habit
+
+  // Toggle habit done/not done
   const toggleHabit = (id) => {
-    const updatedHabits = habits.map((habit) =>
-      habit.id === id ? { ...habit, done: !habit.done } : habit
+    setHabits(
+      habits.map((habit) =>
+        habit.id === id ? { ...habit, done: !habit.done } : habit
+      )
     );
-    setHabits(updatedHabits);
   };
+
   // Add new habit
   const addHabit = () => {
     if (newHabit.trim() === "") return;
-    const habit = {
-      id: habits.length + 1,
-      name: newHabit,
-      icon: "⭐",
-      done: false
-    };
+    const habit = { id: habits.length + 1, name: newHabit, done: false };
     setHabits([...habits, habit]);
     setNewHabit("");
   };
 
   // Reset all habits
   const resetHabits = () => {
-    const reset = habits.map((habit) => ({ ...habit, done: false }));
-    setHabits(reset);
+    setHabits(habits.map((habit) => ({ ...habit, done: false })));
   };
 
   return (
     <div className="app">
-      <h1>🌈 Daily Habit Tracker</h1>
+      <h1>Daily Habit Tracker</h1>
       <Progress habits={habits} />
 
       <div className="habit-list">
@@ -58,12 +57,11 @@ function App() {
           onChange={(e) => setNewHabit(e.target.value)}
         />
         <button onClick={addHabit}>Add Habit</button>
-        <button onClick={resetHabits} className="reset">
-          Reset All
-        </button>
+        <button onClick={resetHabits} className="reset">Reset All</button>
       </div>
     </div>
   );
 }
 
 export default App;
+

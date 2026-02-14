@@ -1,5 +1,6 @@
 import React from "react";
 import "./Habit.css";
+
 function Habit({ habit, toggleHabit }) {
   return (
     <div
@@ -16,4 +17,5 @@ function Habit({ habit, toggleHabit }) {
     </div>
   );
 }
+
 export default Habit;
