@@ -1,14 +1,14 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #b8f2d8;
+  background: linear-gradient(135deg, #a1a88f, #d6d2b2);
   display: flex;
   justify-content: center;
   padding: 20px;
+  min-height: 100vh;
 }
-
 .app {
   width: 400px;
-  background-color: #d8cbd8;
+  background-color: #d1d193;
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
