@@ -1,4 +1,5 @@
 Daily Habit Tracker
+
 Overview
 
 A React app to track daily habits with a clean and modern UI. Users can mark habits as done, track progress, add new habits, and reset all habits.
@@ -14,14 +15,6 @@ Progress bar showing completion percentage
 Add new habit & Reset all habits
 
 Smooth animations & rounded, attractive design
-
-Tech Stack
-
-React (Functional Components + Hooks)
-
-CSS (for styling & animations)
-
-JavaScript
 
 Usage
 
