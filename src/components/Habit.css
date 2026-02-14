@@ -1,0 +1,25 @@
+.habit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border: 2px solid #d3d3d3;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.habit.done {
+  background-color: #d3f9d8;
+  border-color: #6c63ff;
+  color: #333;
+}
+
+.habit .icon {
+  font-size: 1.5rem;
+}
+
+.habit input {
+  cursor: pointer;
+}
