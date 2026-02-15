@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Habit from "./components/Habit";
 import Progress from "./components/Progress";
 import "./App.css";
-
 function App() {
-  // 6 beginner-friendly daily habits (text-only)
   const [habits, setHabits] = useState([
     { id: 1, name: "Morning Walk", done: false },
     { id: 2, name: "Meditation", done: false },
@@ -13,10 +11,7 @@ function App() {
     { id: 5, name: "Plan Tomorrow", done: false },
     { id: 6, name: "Drink Water", done: false },
   ]);
-
   const [newHabit, setNewHabit] = useState("");
-
-  // Toggle habit done/not done
   const toggleHabit = (id) => {
     setHabits(
       habits.map((habit) =>
@@ -24,8 +19,6 @@ function App() {
       )
     );
   };
-
-  // Add new habit
   const addHabit = () => {
     if (newHabit.trim() === "") return;
     const habit = { id: habits.length + 1, name: newHabit, done: false };
@@ -33,7 +26,6 @@ function App() {
     setNewHabit("");
   };
 
-  // Reset all habits
   const resetHabits = () => {
     setHabits(habits.map((habit) => ({ ...habit, done: false })));
   };
